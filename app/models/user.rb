@@ -14,4 +14,5 @@ class User < ApplicationRecord
   def after_confirmation
     WelcomeMailer.send_greeting(self).deliver_now
   end
+
 end
