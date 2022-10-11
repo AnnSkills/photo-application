@@ -6,5 +6,6 @@
   <%= price.unit_amount %>
   <%= price.currency %>
   /<%= price.recurring.interval %>
+  <%= button_to "Checkout", checkout_create_path(price: price.id), method: :post, remote: true, data: { turbo: false } %>
 <% end %>
 
