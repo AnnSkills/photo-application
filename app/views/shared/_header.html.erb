@@ -84,4 +84,5 @@
   <p>Mode: <%= current_user.mode %></p>
   <p>Subscription plan: <%= current_user.subscription_status %></p>
   <p>Stripe customer id <%= current_user.stripe_customer_id %></p>
+  <a><%= link_to "Pricing", pricing_path  %></a>
 <% end %>

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   }
 
   root "home#index"
+  get 'pricing', to: "static_pages#pricing"
 end
