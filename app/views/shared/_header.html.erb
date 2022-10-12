@@ -24,6 +24,7 @@
       </ul>
       <% if user_signed_in? %>
         <li><%= link_to 'Sign Out', destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
+        <li><%= button_to "Billing Portal",  billing_portal_create_path, method: :post %></li>
       <% else %>
         <li><%= link_to 'Sign In', new_user_session_path, class: "dropdown-item" %></li>
       <% end %>
@@ -36,7 +37,8 @@
   <p>Subscription plan: <%= current_user.subscription_status %></p>
   <p>Stripe customer id <%= current_user.stripe_customer_id %></p>
   <a><%= link_to "Pricing", pricing_path  %></a>
+
   <% else %>
-  <%= link_to "Sign Up",  new_user_registration_path, method: :post, remote: true %>
+  <%= link_to "Sign Up",  new_user_registration_path, method: :post %>
 <% end %>
 
