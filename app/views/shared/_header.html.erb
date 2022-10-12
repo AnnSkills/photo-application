@@ -24,7 +24,7 @@
       </ul>
       <% if user_signed_in? %>
         <li><%= link_to 'Sign Out', destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
-        <li><%= button_to "Billing Portal",  billing_portal_create_path, method: :post %></li>
+        <li><%= button_to "Billing Portal",  billing_portal_create_path, method: :post, data: {turbo: false} %></li>
       <% else %>
         <li><%= link_to 'Sign In', new_user_session_path, class: "dropdown-item" %></li>
       <% end %>

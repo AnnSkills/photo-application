@@ -1,0 +1,11 @@
+<% if file_storage.file.attached? %>
+  <div class="row">
+    <% if file_storage.file.image? %>
+    <div class="message-image-container">
+      <%= image_tag(file_storage.file, class:"message-image") %>
+    </div>
+      <% else file_storage.file.video? %>
+          <%= video_tag(url_for(file_storage.file), class:"message-video", controls: "") %>
+    <% end %>
+  </div>
+<% end %>
